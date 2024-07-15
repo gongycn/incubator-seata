@@ -33,7 +33,18 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>snapshots</name>
+            <url>http://nexus.tybase.com:9999/repository/maven-releases/</url>
+        </snapshotRepository>
+        <repository>
+            <id>maven-releases</id>
+            <name>releases</name>
+            <url>http://nexus.tybase.com:9999/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
     <organization>
         <name>Seata</name>
         <url>https://github.com/seata</url>
@@ -63,7 +74,7 @@
 
     <properties>
         <!-- seata version -->
-        <revision>2.0.0</revision>
+        <revision>2.0.1</revision>
 
         <!-- Compiler settings properties -->
         <java.version>1.8</java.version>

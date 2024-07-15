@@ -1,6 +1,6 @@
 {
   "name": "seata-saga-statemachine-designer",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A visual graph designer for Seata Saga StateMachine based on GGEdior 2.0.4",
   "keywords": [
     "react",

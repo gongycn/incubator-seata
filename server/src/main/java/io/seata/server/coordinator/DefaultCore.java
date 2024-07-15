@@ -212,6 +212,15 @@ public class DefaultCore implements Core {
                     SessionHelper.removeBranch(globalSession, branchSession, !retrying);
                     return CONTINUE;
                 }
+                // 这是服务器端的修改，不属于客户端修改，但是依然进行调整，防止误部署
+                // Only databases with read-only optimization, such as Oracle,
+                // will report the RDONLY status during XA transactions.
+                // At this point, the branch transaction can be ignored.
+                if(currentStatus == BranchStatus.PhaseOne_RDONLY
+                        && branchSession.getBranchType() == BranchType.XA) {
+                    SessionHelper.removeBranch(globalSession, branchSession, !retrying);
+                    return CONTINUE;
+                }
                 try {
                     BranchStatus branchStatus = getCore(branchSession.getBranchType()).branchCommit(globalSession, branchSession);
                     if (isXaerNotaTimeout(globalSession,branchStatus)) {

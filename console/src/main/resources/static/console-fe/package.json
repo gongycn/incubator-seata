@@ -1,6 +1,6 @@
 {
   "name": "console-fe",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "console fe",
   "main": "index.js",
   "scripts": {
@@ -56,7 +56,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "file-loader": "^2.0.0",
+    "file-loader": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
